@@ -1,29 +1,29 @@
-interface Light {
-    void turnOn();
-}
+interface SwitchableDevice {  
+    void activate();  
+}  
 
-class LEDLight implements Light {
-    public void turnOn() {
-        System.out.println("LED Light is ON");
-    }
-}
+class Bulb implements SwitchableDevice {  
+    public void activate() {  
+        System.out.println("Bulb is now ON");  
+    }  
+}  
 
-class Switch {
-    Light light;
+class PowerSwitch {  
+    SwitchableDevice device;  
 
-    Switch(Light light) {
-        this.light = light;
-    }
+    PowerSwitch(SwitchableDevice device) {  
+        this.device = device;  
+    }  
 
-    void operate() {
-        light.turnOn();
-    }
-}
+    void toggle() {  
+        device.activate();  
+    }  
+}  
 
-public class DependencyInversionPrinciple {
-    public static void main(String[] args) {
-        Light led = new LEDLight();
-        Switch s = new Switch(led);
-        s.operate();
-    }
-}
+public class DIPExample {  
+    public static void main(String[] args) {  
+        SwitchableDevice bulb = new Bulb();  
+        PowerSwitch powerSwitch = new PowerSwitch(bulb);  
+        powerSwitch.toggle();  
+    }  
+}  
