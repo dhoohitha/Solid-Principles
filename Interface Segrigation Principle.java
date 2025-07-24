@@ -1,29 +1,29 @@
-interface Printer {
-    void print();
-}
+interface DocumentPrinter {  
+    void printDocument();  
+}  
 
-interface Scanner {
-    void scan();
-}
+interface DocumentScanner {  
+    void scanDocument();  
+}  
 
-class PrintMachine implements Printer {
-    public void print() {
-        System.out.println("Printing document");
-    }
-}
+class BasicPrinter implements DocumentPrinter {  
+    public void printDocument() {  
+        System.out.println("Printing document");  
+    }  
+}  
 
-class ScanMachine implements Scanner {
-    public void scan() {
-        System.out.println("Scanning document");
-    }
-}
+class BasicScanner implements DocumentScanner {  
+    public void scanDocument() {  
+        System.out.println("Scanning document");  
+    }  
+}  
 
-public class InterfaceSegrigationPrinciple {
-    public static void main(String[] args) {
-        Printer p = new PrintMachine();
-        Scanner s = new ScanMachine();
+public class ISPExample {  
+    public static void main(String[] args) {  
+        DocumentPrinter printer = new BasicPrinter();  
+        DocumentScanner scanner = new BasicScanner();  
 
-        p.print();
-        s.scan();
-    }
-}
+        printer.printDocument();  
+        scanner.scanDocument();  
+    }  
+}  
