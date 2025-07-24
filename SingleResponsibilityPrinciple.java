@@ -1,27 +1,27 @@
-class Student {
+class Learner {
     String name;
 
-    Student(String name) {
+    Learner(String name) {
         this.name = name;
     }
 
-    void displayInfo() {
-        System.out.println("Student Name: " + name);
+    void showInfo() {
+        System.out.println("Learner Name: " + name);
     }
 }
 
-class StudentData {
-    void save(Student student) {
-        System.out.println("Saving student name: " + student.name);
+class LearnerData {
+    void store(Learner learner) {
+        System.out.println("Storing learner name: " + learner.name);
     }
 }
 
 public class SingleResponsibilityPrinciple {
     public static void main(String[] args) {
-        Student s = new Student("Nikhila");
-        s.displayInfo();
+        Learner l = new Learner("Dhoohitha");
+        l.showInfo();
 
-        StudentData data = new StudentData();
-        data.save(s);
+        LearnerData data = new LearnerData();
+        data.store(l);
     }
 }
