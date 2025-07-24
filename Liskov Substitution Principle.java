@@ -1,27 +1,27 @@
-class Animal {
-    public void makeSound() {
-        System.out.println("Animal makes sound");
+class Creature {
+    public void produceSound() {
+        System.out.println("Creature produces sound");
     }
 }
 
-class Dog extends Animal {
-    public void makeSound() {
-        System.out.println("Dog barks");
+class Canine extends Creature {
+    public void produceSound() {
+        System.out.println("Canine barks");
     }
 }
 
-class Cat extends Animal {
-    public void makeSound() {
-        System.out.println("Cat meows");
+class Feline extends Creature {
+    public void produceSound() {
+        System.out.println("Feline meows");
     }
 }
 
-public class LiskovSubstitutionPrinciple {
+public class LSPExample {
     public static void main(String[] args) {
-        Animal a1 = new Dog();
-        Animal a2 = new Cat();
+        Creature c1 = new Canine();
+        Creature c2 = new Feline();
 
-        a1.makeSound();
-        a2.makeSound();
+        c1.produceSound();
+        c2.produceSound();
     }
 }
